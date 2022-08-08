@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+        <script src=
+                "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        </script>
+        <title>Frontend Mentor | Interactive rating component</title>
+
+    </head>
+    <body>
+        <main class="container">
+            <div class="card">
+                <div class="submit-card">
+                    <div class="star">
+                        <img src="images/icon-star.svg" alt="star">
+                    </div>
+                    <h1 class="header">How did we do?</h1>
+                    <p>
+                        Please let us know how we did with your support request. All feedback is appreciated 
+                        to help us improve our offering!</p>
+
+                    <div class="rating-box">
+                        <div id="1">1</div>
+                        <div id="2">2</div>
+                        <div id="3">3</div>
+                        <div id="4">4</div>
+                        <div id="5">5</div>
+                    </div>
+                    <div class="btn" role="button">SUBMIT</div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="info-card hidden">
+                    <div class="thank-you">
+                        <img class="thanks-img" src="images/illustration-thank-you.svg" alt="thank you">
+                    </div>
+                    <div class="rating-info"><div>You selected <span class="rating-result"></span> out of 5</div></div>
+                    <h2 class="header">Thank you!</h2>
+                    <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+                        don’t hesitate to <br>get in touch!</p>
+                </div>
+            </div>
+
+        </main>
+
+        <script>
+            $('.btn').on('click', function(){
+                $('.info-card').removeClass('hidden');
+                $('.submit-card').addClass('hidden');
+                var elmId = $(".active").attr("id");
+                $(".rating-result").text(elmId);
+            });
+
+            $('.rating-box div').on('click', function(){
+                $('.rating-box div').removeClass('active');
+                $(this).addClass('active');                
+            });
+        </script>
+
+        <!-- Rating state start
+
+How did we do?
+
+Please let us know how we did with your support request. All feedback is appreciated 
+to help us improve our offering!
+
+1 2 3 4 5
+
+Submit
+
+<!-- Rating state end -->
+
+        <!-- Thank you state start -->
+
+        <!--  You selected Add rating here  out of 5
+
+Thank you!
+
+We appreciate you taking the time to give a rating. If you ever need more support, 
+don’t hesitate to get in touch!
+
+<!-- Thank you state end -->
+    </body>
+</html>
